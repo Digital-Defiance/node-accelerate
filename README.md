@@ -2,7 +2,7 @@
 
 High-performance Apple Accelerate framework bindings for Node.js. Get **283x faster** matrix operations and **5-8x faster** vector operations on Apple Silicon (M1/M2/M3/M4).
 
-[![npm version](https://badge.fury.io/js/node-accelerate.svg)](https://www.npmjs.com/package/node-accelerate)
+[![npm version](https://badge.fury.io/js/node-accelerate.svg)](https://www.npmjs.com/package/@digitaldefiance/node-accelerate)
 [![GitHub](https://img.shields.io/github/license/Digital-Defiance/node-accelerate)](https://github.com/Digital-Defiance/node-accelerate/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/Digital-Defiance/node-accelerate?style=social)](https://github.com/Digital-Defiance/node-accelerate)
 [![Node.js CI](https://github.com/Digital-Defiance/node-accelerate/workflows/Test/badge.svg)](https://github.com/Digital-Defiance/node-accelerate/actions)
