@@ -65,13 +65,13 @@ The package will automatically check your platform during installation. If you s
 ### Verifying Installation
 
 ```bash
-node -e "const a = require('node-accelerate'); console.log('✓ Works!')"
+node -e "const a = require('@digitaldefiance/node-accelerate'); console.log('✓ Works!')"
 ```
 
 ## Quick Start
 
 ```javascript
-const accelerate = require('node-accelerate');
+const accelerate = require('@digitaldefiance/node-accelerate');
 
 // Matrix multiplication: C = A × B
 const M = 1000, K = 1000, N = 1000;

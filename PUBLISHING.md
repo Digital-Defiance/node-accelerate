@@ -60,7 +60,7 @@ mkdir test-install
 cd test-install
 npm init -y
 npm install ../node-accelerate/node-accelerate-1.0.0.tgz
-node -e "const a = require('node-accelerate'); console.log(a)"
+node -e "const a = require('@digitaldefiance/node-accelerate'); console.log(a)"
 ```
 
 ### 3. Login to npm

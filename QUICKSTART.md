@@ -13,7 +13,7 @@ npm install node-accelerate
 Create `test.js`:
 
 ```javascript
-const accelerate = require('node-accelerate');
+const accelerate = require('@digitaldefiance/node-accelerate');
 
 // Matrix multiplication
 const M = 100, K = 100, N = 100;
