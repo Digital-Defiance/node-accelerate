@@ -35,7 +35,7 @@ Real benchmarks on Apple M4 Max:
 ## Installation
 
 ```bash
-npm install node-accelerate
+npm install @digitaldefiance/node-accelerate
 ```
 
 **Requirements:**
@@ -64,7 +64,7 @@ The package will automatically check your platform during installation. If you s
 - Follow the prompts to install
 
 **"Failed to load native module"**
-- Try rebuilding: `npm rebuild node-accelerate`
+- Try rebuilding: `npm rebuild @digitaldefiance/node-accelerate`
 - Ensure Xcode Command Line Tools are installed
 
 ### Verifying Installation
@@ -489,18 +489,18 @@ Built on Apple's Accelerate framework. Inspired by the need for high-performance
 
 ## Troubleshooting
 
-### "Cannot find module 'node-accelerate'"
+### "Cannot find module '@digitaldefiance/node-accelerate'"
 
 Make sure you installed it:
 ```bash
-npm install node-accelerate
+npm install @digitaldefiance/node-accelerate
 ```
 
 ### "Error: Module did not self-register"
 
 Rebuild the addon:
 ```bash
-npm rebuild node-accelerate
+npm rebuild @digitaldefiance/node-accelerate
 ```
 
 ### "node-accelerate requires macOS"
