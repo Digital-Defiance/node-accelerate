@@ -1,6 +1,6 @@
 {
   "name": "@digitaldefiance/node-accelerate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "High-performance Apple Accelerate framework bindings for Node.js - 283x faster matrix operations on Apple Silicon",
   "main": "index.js",
   "types": "index.d.ts",
