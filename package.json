@@ -1,6 +1,6 @@
 {
   "name": "@digitaldefiance/node-accelerate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "High-performance Apple Accelerate framework bindings for Node.js - 283x faster matrix operations on Apple Silicon",
   "main": "index.js",
   "types": "index.d.ts",
@@ -11,7 +11,8 @@
     "test": "node test.js",
     "benchmark": "node benchmark.js",
     "compare": "node compare.js",
-    "prepublishOnly": "npm test"
+    "prepublishOnly": "npm test",
+    "publish:public": "npm publish --access public"
   },
   "keywords": [
     "accelerate",

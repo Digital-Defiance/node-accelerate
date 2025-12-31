@@ -4,6 +4,7 @@ High-performance Apple Accelerate framework bindings for Node.js. Get **283x fas
 
 [![npm version](https://badge.fury.io/js/node-accelerate.svg)](https://www.npmjs.com/package/node-accelerate)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[GitHub](https://github.com/Digital-Defiance/node-accelerate)
 
 ## Why?
 
