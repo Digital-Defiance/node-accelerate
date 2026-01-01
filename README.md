@@ -1,6 +1,6 @@
 # node-accelerate
 
-High-performance Apple Accelerate framework bindings for Node.js. Get **up to 296x faster** matrix operations and **5-10x faster** vector operations on Apple Silicon (M1/M2/M3/M4).
+High-performance Apple Accelerate framework bindings for Node.js. Get **up to 305x faster** matrix operations and **5-10x faster** vector operations on Apple Silicon (M1/M2/M3/M4).
 
 **80+ hardware-accelerated functions** including BLAS, vDSP, and vForce operations.
 
