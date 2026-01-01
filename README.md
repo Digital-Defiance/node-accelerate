@@ -29,11 +29,11 @@ Real benchmarks on Apple M4 Max:
 
 | Operation | Pure JavaScript | node-accelerate | Speedup |
 |-----------|----------------|-----------------|---------|
-| Matrix Multiply (500×500) | 86 ms | 0.30 ms | **290x** |
-| Vector Dot Product (1M) | 0.63 ms | 0.13 ms | **5x** |
-| Vector Sum (1M) | 0.59 ms | 0.07 ms | **8x** |
-| Vector Add (1M) | 0.58 ms | 0.19 ms | **3x** |
-| Trigonometric (10k) | 0.07 ms | 0.008 ms | **8x** |
+| Matrix Multiply (500×500) | 90.5 ms | 0.30 ms | **305x** |
+| Vector Dot Product (1M) | 0.65 ms | 0.13 ms | **4.9x** |
+| Vector Sum (1M) | 0.58 ms | 0.07 ms | **7.8x** |
+| Vector Add (1M) | 0.44 ms | 0.19 ms | **2.2x** |
+| Vector Sin (10k) | 0.062 ms | 0.008 ms | **7.6x** |
 
 ## Features
 
