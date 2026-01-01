@@ -16,20 +16,20 @@ const features: Feature[] = [
     title: "Matrix Operations (BLAS)",
     icon: "🔢",
     description:
-      "Hardware-accelerated matrix operations using Apple's AMX coprocessor. Get 283x speedup on matrix multiplication compared to pure JavaScript.",
+      "Hardware-accelerated matrix operations using Apple's AMX coprocessor. Get up to 296x speedup on matrix multiplication compared to pure JavaScript.",
     tech: ["BLAS", "AMX", "Linear Algebra"],
     category: "Matrix",
     highlights: [
-      "matmul() - Matrix multiplication (C = A × B) with 283x speedup",
+      "matmul() - Matrix multiplication (C = A × B) with up to 296x speedup",
       "matvec() - Matrix-vector multiplication (y = A × x)",
+      "transpose() - Matrix transpose (B = A^T)",
       "axpy() - AXPY operation (y = alpha*x + y)",
-      "Supports Float64Array for double precision",
-      "Row-major order for seamless JavaScript integration",
+      "copy(), swap(), norm(), abssum(), maxAbsIndex(), rot()",
     ],
   },
   {
     title: "Vector Operations (vDSP)",
-    icon: "�",
+    icon: "📊",
     description:
       "SIMD-accelerated vector operations using NEON instructions. Element-wise operations run 3-8x faster than pure JavaScript.",
     tech: ["vDSP", "NEON SIMD", "Vector Math"],
@@ -37,38 +37,143 @@ const features: Feature[] = [
     highlights: [
       "vadd(), vsub(), vmul(), vdiv() - Element-wise arithmetic (3-8x faster)",
       "dot() - Dot product with 5x speedup",
-      "sum(), mean(), rms() - Fast reductions",
+      "vscale(), vneg(), vaddScalar() - Scalar operations",
       "vabs(), vsquare(), vsqrt() - Element-wise functions",
-      "normalize() - Vector normalization to unit length",
+      "normalize(), vreverse(), vfill(), vramp(), vlerp(), vclear(), vlimit()",
     ],
   },
   {
-    title: "Fast Fourier Transform",
+    title: "Advanced Vector Operations",
+    icon: "⚡",
+    description:
+      "Multiply-add operations and vector utilities for high-performance computing. Fused operations reduce memory bandwidth and improve performance.",
+    tech: ["vDSP", "Fused Operations", "Performance"],
+    category: "Vector",
+    highlights: [
+      "vma() - Multiply-add: d = (a*b) + c (fused operation)",
+      "vmsa() - Multiply-scalar-add: d = (a*b) + c",
+      "vlerp() - Linear interpolation between vectors",
+      "vlimit() - Saturate/limit values to range",
+      "Perfect for physics simulations and numerical algorithms",
+    ],
+  },
+  {
+    title: "Statistical Functions",
+    icon: "📈",
+    description:
+      "Hardware-accelerated statistical operations for data analysis. Compute mean, variance, standard deviation, and more with vDSP optimization.",
+    tech: ["Statistics", "vDSP", "Data Analysis"],
+    category: "Core",
+    highlights: [
+      "mean(), variance(), stddev() - Central tendency and spread",
+      "sum(), min(), max(), minmax() - Basic reductions",
+      "rms(), sumOfSquares() - Power and energy metrics",
+      "meanMagnitude(), meanSquare() - Advanced statistics",
+      "maxMagnitude(), minMagnitude() - Magnitude extrema",
+    ],
+  },
+  {
+    title: "Trigonometric Functions",
+    icon: "📐",
+    description:
+      "Vectorized trigonometric operations using vForce. Process thousands of angles 5-10x faster than Math.sin/cos/tan in loops.",
+    tech: ["vForce", "Trigonometry", "SIMD"],
+    category: "Core",
+    highlights: [
+      "vsin(), vcos(), vtan() - Standard trig functions",
+      "vasin(), vacos(), vatan(), vatan2() - Inverse trig",
+      "5-10x faster than JavaScript Math functions",
+      "Process entire arrays in single operations",
+      "Perfect for graphics, physics, and signal processing",
+    ],
+  },
+  {
+    title: "Hyperbolic Functions",
+    icon: "〰️",
+    description:
+      "Hardware-accelerated hyperbolic functions using vForce. Essential for neural network activations (tanh), physics simulations, and mathematical modeling.",
+    tech: ["vForce", "Hyperbolic", "Neural Networks"],
+    category: "Core",
+    highlights: [
+      "vsinh(), vcosh(), vtanh() - Hyperbolic functions",
+      "tanh() commonly used as activation function in ML",
+      "Hardware-accelerated for maximum performance",
+      "Perfect for neural networks and scientific computing",
+      "Process thousands of values in microseconds",
+    ],
+  },
+  {
+    title: "Exponential & Logarithmic",
+    icon: "📉",
+    description:
+      "Fast exponential and logarithmic operations using vForce. Essential for ML activations, probability calculations, and scientific computing.",
+    tech: ["vForce", "Math Functions", "ML"],
+    category: "Core",
+    highlights: [
+      "vexp() - Natural exponential (e^x)",
+      "vlog(), vlog10() - Natural and base-10 logarithms",
+      "vpow() - Element-wise power (a^b)",
+      "vreciprocal(), vrsqrt() - Reciprocal and inverse square root",
+      "Perfect for softmax, log-likelihood, and ML operations",
+    ],
+  },
+  {
+    title: "Rounding Functions",
+    icon: "🔄",
+    description:
+      "Vectorized rounding operations using vForce. Efficiently round, floor, ceil, and truncate entire arrays with hardware acceleration.",
+    tech: ["vForce", "Rounding", "Data Processing"],
+    category: "Core",
+    highlights: [
+      "vceil(), vfloor(), vtrunc() - Rounding operations",
+      "vcopysign() - Copy sign between vectors",
+      "Hardware-accelerated for large datasets",
+      "Perfect for quantization and data preprocessing",
+      "Process thousands of values simultaneously",
+    ],
+  },
+  {
+    title: "Signal Processing",
     icon: "📡",
     description:
-      "Hardware-optimized FFT implementation for signal processing. Analyze frequency spectra with Apple's vDSP FFT routines.",
+      "Complete signal processing toolkit with FFT, convolution, and correlation. Hardware-optimized for audio, communications, and time-series analysis.",
     tech: ["FFT", "vDSP", "Signal Processing"],
     category: "Signal",
     highlights: [
-      "fft() - Fast Fourier Transform for frequency analysis",
-      "Returns real and imaginary components",
-      "Supports power-of-2 signal lengths",
-      "Perfect for audio processing and spectrum analysis",
-      "Hardware-accelerated for maximum performance",
+      "fft(), ifft() - Fast Fourier Transform (forward & inverse)",
+      "conv() - 1D convolution for filtering",
+      "xcorr() - Cross-correlation for signal alignment",
+      "hamming(), hanning(), blackman() - Window functions",
+      "10-50x faster than pure JavaScript FFT",
+    ],
+  },
+  {
+    title: "Data Processing",
+    icon: "🔧",
+    description:
+      "Essential data manipulation functions for preprocessing and feature engineering. Clip, threshold, interpolate, and transform your data efficiently.",
+    tech: ["Data Processing", "vDSP", "Preprocessing"],
+    category: "Core",
+    highlights: [
+      "vclip() - Clip values to range [min, max]",
+      "vthreshold() - Apply threshold to data",
+      "interp1d() - Linear interpolation",
+      "vlimit() - Saturate values to range",
+      "Perfect for data preprocessing and normalization",
     ],
   },
   {
     title: "Distance Metrics",
-    icon: "�",
+    icon: "📏",
     description:
       "Accelerated distance calculations for machine learning and scientific computing. Essential for clustering, nearest neighbor, and similarity algorithms.",
     tech: ["Distance Metrics", "ML", "Scientific Computing"],
     category: "Core",
     highlights: [
       "euclidean() - Euclidean distance between vectors",
+      "norm() - L2 norm (vector length)",
       "Hardware-accelerated for large datasets",
       "Perfect for k-NN, clustering, and similarity search",
-      "Works with Float64Array for precision",
       "Foundation for ML inference pipelines",
     ],
   },
@@ -76,26 +181,26 @@ const features: Feature[] = [
     title: "Extreme Performance",
     icon: "🚀",
     description:
-      "Real benchmarks on Apple M4 Max show dramatic speedups. Matrix operations are 283x faster, vector operations 5-8x faster than pure JavaScript.",
+      "Real benchmarks on Apple M4 Max show dramatic speedups. Matrix operations are up to 296x faster, vector operations 5-8x faster than pure JavaScript.",
     tech: ["Benchmarks", "Performance", "Optimization"],
     category: "Performance",
     highlights: [
-      "Matrix Multiply (500×500): 93ms → 0.33ms (283x faster)",
-      "Vector Dot Product (1M): 0.66ms → 0.13ms (5x faster)",
-      "Vector Sum (1M): 0.59ms → 0.08ms (7.6x faster)",
-      "Vector Add (1M): 0.74ms → 0.20ms (3.7x faster)",
+      "Matrix Multiply (500×500): 86ms → 0.30ms (290x faster typical)",
+      "Vector Dot Product (1M): 0.63ms → 0.13ms (5x faster)",
+      "Vector Sum (1M): 0.59ms → 0.07ms (8x faster)",
+      "Trigonometric ops: 5-10x faster than Math functions",
       "Direct access to Apple Silicon hardware acceleration",
     ],
   },
   {
     title: "TypeScript Support",
-    icon: "�",
+    icon: "📘",
     description:
       "Full TypeScript definitions included for type-safe numerical computing. Catch errors at compile time and get excellent IDE autocomplete.",
     tech: ["TypeScript", "Type Safety", "DX"],
     category: "Core",
     highlights: [
-      "Complete .d.ts type definitions included",
+      "Complete .d.ts type definitions for all 80+ functions",
       "Type-safe function signatures for all operations",
       "Excellent IDE autocomplete and documentation",
       "Catch dimension mismatches at compile time",
@@ -106,20 +211,20 @@ const features: Feature[] = [
     title: "Machine Learning Ready",
     icon: "🤖",
     description:
-      "Perfect for ML inference in Node.js. Accelerate neural network layers, embeddings, and transformations with hardware-optimized matrix operations.",
+      "Perfect for ML inference in Node.js. Accelerate neural network layers, embeddings, and transformations with hardware-optimized operations.",
     tech: ["Machine Learning", "Neural Networks", "Inference"],
     category: "Core",
     highlights: [
       "Fast matrix multiplication for dense layers",
-      "Vector operations for activations and normalization",
+      "Vectorized activations (ReLU, softmax, sigmoid, tanh)",
+      "Statistical functions for normalization",
       "Distance metrics for similarity search",
-      "Ideal for running ML models in Node.js",
-      "Dramatically faster than pure JavaScript implementations",
+      "80+ functions for complete ML pipelines",
     ],
   },
   {
     title: "Scientific Computing",
-    icon: "�",
+    icon: "🔬",
     description:
       "Essential tools for numerical computing, simulations, and data analysis. From numerical integration to signal processing, all hardware-accelerated.",
     tech: ["Scientific Computing", "Numerical Methods", "Data Science"],
@@ -128,7 +233,7 @@ const features: Feature[] = [
       "Vector operations for numerical algorithms",
       "FFT for signal and frequency analysis",
       "Matrix operations for linear algebra",
-      "Reductions (sum, mean, RMS) for statistics",
+      "Statistical functions for data analysis",
       "Perfect for data science and scientific applications",
     ],
   },
@@ -169,9 +274,10 @@ const Components = () => {
             <strong>
               node-accelerate brings Apple's Accelerate framework to JavaScript
             </strong>{" "}
-            — giving you direct access to hardware-optimized BLAS (matrix operations)
-            and vDSP (vector/signal processing) routines. Get 283x speedup on matrix
-            multiplication and 5-8x faster vector operations compared to pure JavaScript.
+            — giving you direct access to 80+ hardware-optimized functions including
+            BLAS (matrix operations), vDSP (vector/signal processing), and vForce
+            (math functions). Get up to 296x speedup on matrix multiplication and 5-10x
+            faster vector operations compared to pure JavaScript.
           </p>
           <div className="problem-solution">
             <div className="problem">
@@ -207,17 +313,17 @@ const Components = () => {
           </div>
           <div className="value-props">
             <div className="value-prop">
-              <strong>⚡ 283x Faster</strong>
+              <strong>⚡ Up to 296x Faster</strong>
               <p>
-                Matrix multiplication runs 283x faster than pure JavaScript on
+                Matrix multiplication runs up to 296x faster than pure JavaScript on
                 Apple M4 Max
               </p>
             </div>
             <div className="value-prop">
-              <strong>🔢 BLAS & vDSP</strong>
+              <strong>🔢 80+ Functions</strong>
               <p>
-                Complete matrix operations (BLAS) and vector/signal processing
-                (vDSP) support
+                Complete matrix, vector, signal processing, statistics, and math
+                functions
               </p>
             </div>
             <div className="value-prop">

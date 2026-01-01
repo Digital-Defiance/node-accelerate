@@ -57,12 +57,12 @@ const Hero = ({ scrollY }: HeroProps) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          Get 283x faster matrix operations and 5-8x faster vector operations
+          50+ hardware-accelerated functions for matrix operations, signal processing, and statistics
           <br />
-          on Apple Silicon with hardware-optimized BLAS and vDSP routines.
+          on Apple Silicon with hardware-optimized BLAS, vDSP, and vForce routines.
           <br />
           <span className="hero-highlight">
-            🚀 283x Faster • 🔢 Matrix Operations • 📊 Vector Processing • 📡 FFT • 🍎 Apple Silicon
+            🚀 Up to 296x Faster • 🔢 80+ Functions • 📊 Statistics • 📡 FFT/IFFT • 🌊 Convolution • 🍎 Apple Silicon
           </span>
         </motion.p>
 

@@ -49,11 +49,11 @@ const About = () => {
             </p>
             <p>
               <strong>node-accelerate</strong> embodies this mission by bringing
-              Apple's Accelerate framework to Node.js. With hardware-optimized
-              matrix operations, vector processing, and FFT routines, we've made
-              it possible to run numerical computing workloads at native speeds
-              in JavaScript — achieving 283x speedups on matrix multiplication
-              and 5-8x faster vector operations.
+              Apple's Accelerate framework to Node.js. With 50+ hardware-optimized
+              functions including matrix operations, signal processing, statistics,
+              and FFT routines, we've made it possible to run numerical computing
+              workloads at native speeds in JavaScript — achieving up to 296x speedups
+              on matrix multiplication and 5-10x faster vector operations.
             </p>
             <p className="highlight-text">
               <FaCode /> <strong>100% Open Source.</strong> This library is
