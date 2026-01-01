@@ -1,6 +1,6 @@
 {
   "name": "@digitaldefiance/node-accelerate",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "High-performance Apple Accelerate framework bindings for Node.js - 80+ optimized functions including BLAS, vDSP, and vForce",
   "main": "index.js",
   "types": "index.d.ts",
